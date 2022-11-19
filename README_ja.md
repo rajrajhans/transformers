@@ -92,51 +92,55 @@ user: ユーザ
     <a href="https://hf.co/course"><img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/course_banner.png"></a>
 </h3>
 
-🤗Transformersは、テキスト、視覚、音声などの異なるモダリティに対してタスクを実行するために、事前に学習させた数千のモデルを提供します。
+🤗Transformers は、テキスト、視覚、音声などの異なるモダリティに対してタスクを実行するために、事前に学習させた数千のモデルを提供します。
 
 これらのモデルは次のような場合に適用できます:
 
-* 📝 テキストは、テキストの分類、情報抽出、質問応答、要約、翻訳、テキスト生成などのタスクのために、100以上の言語に対応しています。
-* 🖼️ 画像分類、物体検出、セグメンテーションなどのタスクのための画像。
-* 🗣️ 音声は、音声認識や音声分類などのタスクに使用します。
+- 📝 テキストは、テキストの分類、情報抽出、質問応答、要約、翻訳、テキスト生成などのタスクのために、100 以上の言語に対応しています。
+- 🖼️ 画像分類、物体検出、セグメンテーションなどのタスクのための画像。
+- 🗣️ 音声は、音声認識や音声分類などのタスクに使用します。
 
 トランスフォーマーモデルは、テーブル質問応答、光学文字認識、スキャン文書からの情報抽出、ビデオ分類、視覚的質問応答など、**複数のモダリティを組み合わせた**タスクも実行可能です。
 
-🤗Transformersは、与えられたテキストに対してそれらの事前学習されたモデルを素早くダウンロードして使用し、あなた自身のデータセットでそれらを微調整し、私たちの[model hub](https://huggingface.co/models)でコミュニティと共有するためのAPIを提供します。同時に、アーキテクチャを定義する各Pythonモジュールは完全にスタンドアロンであり、迅速な研究実験を可能にするために変更することができます。
+🤗Transformers は、与えられたテキストに対してそれらの事前学習されたモデルを素早くダウンロードして使用し、あなた自身のデータセットでそれらを微調整し、私たちの[model hub](https://huggingface.co/models)でコミュニティと共有するための API を提供します。同時に、アーキテクチャを定義する各 Python モジュールは完全にスタンドアロンであり、迅速な研究実験を可能にするために変更することができます。
 
-🤗Transformersは[Jax](https://jax.readthedocs.io/en/latest/)、[PyTorch](https://pytorch.org/)、[TensorFlow](https://www.tensorflow.org/)という3大ディープラーニングライブラリーに支えられ、それぞれのライブラリをシームレスに統合しています。片方でモデルを学習してから、もう片方で推論用にロードするのは簡単なことです。
+🤗Transformers は[Jax](https://jax.readthedocs.io/en/latest/)、[PyTorch](https://pytorch.org/)、[TensorFlow](https://www.tensorflow.org/)という 3 大ディープラーニングライブラリーに支えられ、それぞれのライブラリをシームレスに統合しています。片方でモデルを学習してから、もう片方で推論用にロードするのは簡単なことです。
 
 ## オンラインデモ
 
-[model hub](https://huggingface.co/models)から、ほとんどのモデルのページで直接テストすることができます。また、パブリックモデル、プライベートモデルに対して、[プライベートモデルのホスティング、バージョニング、推論API](https://huggingface.co/pricing)を提供しています。
+[model hub](https://huggingface.co/models)から、ほとんどのモデルのページで直接テストすることができます。また、パブリックモデル、プライベートモデルに対して、[プライベートモデルのホスティング、バージョニング、推論 API](https://huggingface.co/pricing)を提供しています。
 
 以下はその一例です:
 
- 自然言語処理にて:
-- [BERTによるマスクドワード補完](https://huggingface.co/bert-base-uncased?text=Paris+is+the+%5BMASK%5D+of+France)
-- [Electraによる名前実体認識](https://huggingface.co/dbmdz/electra-large-discriminator-finetuned-conll03-english?text=My+name+is+Sarah+and+I+live+in+London+city)
-- [GPT-2によるテキスト生成](https://huggingface.co/gpt2?text=A+long+time+ago%2C+)
-- [RoBERTaによる自然言語推論](https://huggingface.co/roberta-large-mnli?text=The+dog+was+lost.+Nobody+lost+any+animal)
-- [BARTによる要約](https://huggingface.co/facebook/bart-large-cnn?text=The+tower+is+324+metres+%281%2C063+ft%29+tall%2C+about+the+same+height+as+an+81-storey+building%2C+and+the+tallest+structure+in+Paris.+Its+base+is+square%2C+measuring+125+metres+%28410+ft%29+on+each+side.+During+its+construction%2C+the+Eiffel+Tower+surpassed+the+Washington+Monument+to+become+the+tallest+man-made+structure+in+the+world%2C+a+title+it+held+for+41+years+until+the+Chrysler+Building+in+New+York+City+was+finished+in+1930.+It+was+the+first+structure+to+reach+a+height+of+300+metres.+Due+to+the+addition+of+a+broadcasting+aerial+at+the+top+of+the+tower+in+1957%2C+it+is+now+taller+than+the+Chrysler+Building+by+5.2+metres+%2817+ft%29.+Excluding+transmitters%2C+the+Eiffel+Tower+is+the+second+tallest+free-standing+structure+in+France+after+the+Millau+Viaduct)
-- [DistilBERTによる質問応答](https://huggingface.co/distilbert-base-uncased-distilled-squad?text=Which+name+is+also+used+to+describe+the+Amazon+rainforest+in+English%3F&context=The+Amazon+rainforest+%28Portuguese%3A+Floresta+Amaz%C3%B4nica+or+Amaz%C3%B4nia%3B+Spanish%3A+Selva+Amaz%C3%B3nica%2C+Amazon%C3%ADa+or+usually+Amazonia%3B+French%3A+For%C3%AAt+amazonienne%3B+Dutch%3A+Amazoneregenwoud%29%2C+also+known+in+English+as+Amazonia+or+the+Amazon+Jungle%2C+is+a+moist+broadleaf+forest+that+covers+most+of+the+Amazon+basin+of+South+America.+This+basin+encompasses+7%2C000%2C000+square+kilometres+%282%2C700%2C000+sq+mi%29%2C+of+which+5%2C500%2C000+square+kilometres+%282%2C100%2C000+sq+mi%29+are+covered+by+the+rainforest.+This+region+includes+territory+belonging+to+nine+nations.+The+majority+of+the+forest+is+contained+within+Brazil%2C+with+60%25+of+the+rainforest%2C+followed+by+Peru+with+13%25%2C+Colombia+with+10%25%2C+and+with+minor+amounts+in+Venezuela%2C+Ecuador%2C+Bolivia%2C+Guyana%2C+Suriname+and+French+Guiana.+States+or+departments+in+four+nations+contain+%22Amazonas%22+in+their+names.+The+Amazon+represents+over+half+of+the+planet%27s+remaining+rainforests%2C+and+comprises+the+largest+and+most+biodiverse+tract+of+tropical+rainforest+in+the+world%2C+with+an+estimated+390+billion+individual+trees+divided+into+16%2C000+species)
-- [T5による翻訳](https://huggingface.co/t5-base?text=My+name+is+Wolfgang+and+I+live+in+Berlin)
+自然言語処理にて:
+
+- [BERT によるマスクドワード補完](https://huggingface.co/bert-base-uncased?text=Paris+is+the+%5BMASK%5D+of+France)
+- [Electra による名前実体認識](https://huggingface.co/dbmdz/electra-large-discriminator-finetuned-conll03-english?text=My+name+is+Sarah+and+I+live+in+London+city)
+- [GPT-2 によるテキスト生成](https://huggingface.co/gpt2?text=A+long+time+ago%2C+)
+- [RoBERTa による自然言語推論](https://huggingface.co/roberta-large-mnli?text=The+dog+was+lost.+Nobody+lost+any+animal)
+- [BART による要約](https://huggingface.co/facebook/bart-large-cnn?text=The+tower+is+324+metres+%281%2C063+ft%29+tall%2C+about+the+same+height+as+an+81-storey+building%2C+and+the+tallest+structure+in+Paris.+Its+base+is+square%2C+measuring+125+metres+%28410+ft%29+on+each+side.+During+its+construction%2C+the+Eiffel+Tower+surpassed+the+Washington+Monument+to+become+the+tallest+man-made+structure+in+the+world%2C+a+title+it+held+for+41+years+until+the+Chrysler+Building+in+New+York+City+was+finished+in+1930.+It+was+the+first+structure+to+reach+a+height+of+300+metres.+Due+to+the+addition+of+a+broadcasting+aerial+at+the+top+of+the+tower+in+1957%2C+it+is+now+taller+than+the+Chrysler+Building+by+5.2+metres+%2817+ft%29.+Excluding+transmitters%2C+the+Eiffel+Tower+is+the+second+tallest+free-standing+structure+in+France+after+the+Millau+Viaduct)
+- [DistilBERT による質問応答](https://huggingface.co/distilbert-base-uncased-distilled-squad?text=Which+name+is+also+used+to+describe+the+Amazon+rainforest+in+English%3F&context=The+Amazon+rainforest+%28Portuguese%3A+Floresta+Amaz%C3%B4nica+or+Amaz%C3%B4nia%3B+Spanish%3A+Selva+Amaz%C3%B3nica%2C+Amazon%C3%ADa+or+usually+Amazonia%3B+French%3A+For%C3%AAt+amazonienne%3B+Dutch%3A+Amazoneregenwoud%29%2C+also+known+in+English+as+Amazonia+or+the+Amazon+Jungle%2C+is+a+moist+broadleaf+forest+that+covers+most+of+the+Amazon+basin+of+South+America.+This+basin+encompasses+7%2C000%2C000+square+kilometres+%282%2C700%2C000+sq+mi%29%2C+of+which+5%2C500%2C000+square+kilometres+%282%2C100%2C000+sq+mi%29+are+covered+by+the+rainforest.+This+region+includes+territory+belonging+to+nine+nations.+The+majority+of+the+forest+is+contained+within+Brazil%2C+with+60%25+of+the+rainforest%2C+followed+by+Peru+with+13%25%2C+Colombia+with+10%25%2C+and+with+minor+amounts+in+Venezuela%2C+Ecuador%2C+Bolivia%2C+Guyana%2C+Suriname+and+French+Guiana.+States+or+departments+in+four+nations+contain+%22Amazonas%22+in+their+names.+The+Amazon+represents+over+half+of+the+planet%27s+remaining+rainforests%2C+and+comprises+the+largest+and+most+biodiverse+tract+of+tropical+rainforest+in+the+world%2C+with+an+estimated+390+billion+individual+trees+divided+into+16%2C000+species)
+- [T5 による翻訳](https://huggingface.co/t5-base?text=My+name+is+Wolfgang+and+I+live+in+Berlin)
 
 コンピュータビジョンにて:
-- [ViTによる画像分類](https://huggingface.co/google/vit-base-patch16-224)
-- [DETRによる物体検出](https://huggingface.co/facebook/detr-resnet-50)
-- [SegFormerによるセマンティックセグメンテーション](https://huggingface.co/nvidia/segformer-b0-finetuned-ade-512-512)
-- [DETRによるパノプティックセグメンテーション](https://huggingface.co/facebook/detr-resnet-50-panoptic)
+
+- [ViT による画像分類](https://huggingface.co/google/vit-base-patch16-224)
+- [DETR による物体検出](https://huggingface.co/facebook/detr-resnet-50)
+- [SegFormer によるセマンティックセグメンテーション](https://huggingface.co/nvidia/segformer-b0-finetuned-ade-512-512)
+- [DETR によるパノプティックセグメンテーション](https://huggingface.co/facebook/detr-resnet-50-panoptic)
 
 オーディオにて:
-- [Wav2Vec2による自動音声認識](https://huggingface.co/facebook/wav2vec2-base-960h)
-- [Wav2Vec2によるキーワード検索](https://huggingface.co/superb/wav2vec2-base-superb-ks)
+
+- [Wav2Vec2 による自動音声認識](https://huggingface.co/facebook/wav2vec2-base-960h)
+- [Wav2Vec2 によるキーワード検索](https://huggingface.co/superb/wav2vec2-base-superb-ks)
 
 マルチモーダルなタスクにて:
-- [ViLTによる視覚的質問応答](https://huggingface.co/dandelin/vilt-b32-finetuned-vqa)
 
-Hugging Faceチームによって作られた **[トランスフォーマーを使った書き込み](https://transformer.huggingface.co)** は、このリポジトリのテキスト生成機能の公式デモである。
+- [ViLT による視覚的質問応答](https://huggingface.co/dandelin/vilt-b32-finetuned-vqa)
 
-## Hugging Faceチームによるカスタム・サポートをご希望の場合
+Hugging Face チームによって作られた **[トランスフォーマーを使った書き込み](https://transformer.huggingface.co)** は、このリポジトリのテキスト生成機能の公式デモである。
+
+## Hugging Face チームによるカスタム・サポートをご希望の場合
 
 <a target="_blank" href="https://huggingface.co/support">
     <img alt="HuggingFace Expert Acceleration Program" src="https://cdn-media.huggingface.co/marketing/transformers/new-support-improved.png" style="max-width: 600px; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
@@ -144,7 +148,7 @@ Hugging Faceチームによって作られた **[トランスフォーマーを�
 
 ## クイックツアー
 
-与えられた入力（テキスト、画像、音声、...）に対してすぐにモデルを使うために、我々は`pipeline`というAPIを提供しております。pipelineは、学習済みのモデルと、そのモデルの学習時に使用された前処理をグループ化したものです。以下は、肯定的なテキストと否定的なテキストを分類するためにpipelineを使用する方法です:
+与えられた入力（テキスト、画像、音声、...）に対してすぐにモデルを使うために、我々は`pipeline`という API を提供しております。pipeline は、学習済みのモデルと、そのモデルの学習時に使用された前処理をグループ化したものです。以下は、肯定的なテキストと否定的なテキストを分類するために pipeline を使用する方法です:
 
 ```python
 >>> from transformers import pipeline
@@ -155,11 +159,11 @@ Hugging Faceチームによって作られた **[トランスフォーマーを�
 [{'label': 'POSITIVE', 'score': 0.9996980428695679}]
 ```
 
-2行目のコードでは、pipelineで使用される事前学習済みモデルをダウンロードしてキャッシュし、3行目では与えられたテキストに対してそのモデルを評価します。ここでは、答えは99.97%の信頼度で「ポジティブ」です。
+2 行目のコードでは、pipeline で使用される事前学習済みモデルをダウンロードしてキャッシュし、3 行目では与えられたテキストに対してそのモデルを評価します。ここでは、答えは 99.97%の信頼度で「ポジティブ」です。
 
 自然言語処理だけでなく、コンピュータビジョンや音声処理においても、多くのタスクにはあらかじめ訓練された`pipeline`が用意されている。例えば、画像から検出された物体を簡単に抽出することができる:
 
-``` python
+```python
 >>> import requests
 >>> from PIL import Image
 >>> from transformers import pipeline
@@ -196,9 +200,10 @@ Hugging Faceチームによって作られた **[トランスフォーマーを�
     <a><img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/coco_sample_post_processed.png" width="400"></a>
 </h3>
 
-[このチュートリアル](https://huggingface.co/docs/transformers/task_summary)では、`pipeline`APIでサポートされているタスクについて詳しく説明しています。
+[このチュートリアル](https://huggingface.co/docs/transformers/task_summary)では、`pipeline`API でサポートされているタスクについて詳しく説明しています。
 
-`pipeline`に加えて、与えられたタスクに学習済みのモデルをダウンロードして使用するために必要なのは、3行のコードだけです。以下はPyTorchのバージョンです:
+`pipeline`に加えて、与えられたタスクに学習済みのモデルをダウンロードして使用するために必要なのは、3 行のコードだけです。以下は PyTorch のバージョンです:
+
 ```python
 >>> from transformers import AutoTokenizer, AutoModel
 
@@ -210,6 +215,7 @@ Hugging Faceチームによって作られた **[トランスフォーマーを�
 ```
 
 And here is the equivalent code for TensorFlow:
+
 ```python
 >>> from transformers import AutoTokenizer, TFAutoModel
 
@@ -220,53 +226,56 @@ And here is the equivalent code for TensorFlow:
 >>> outputs = model(**inputs)
 ```
 
-トークナイザは学習済みモデルが期待するすべての前処理を担当し、単一の文字列 (上記の例のように) またはリストに対して直接呼び出すことができます。これは下流のコードで使用できる辞書を出力します。また、単純に ** 引数展開演算子を使用してモデルに直接渡すこともできます。
+トークナイザは学習済みモデルが期待するすべての前処理を担当し、単一の文字列 (上記の例のように) またはリストに対して直接呼び出すことができます。これは下流のコードで使用できる辞書を出力します。また、単純に \*\* 引数展開演算子を使用してモデルに直接渡すこともできます。
 
-モデル自体は通常の[Pytorch `nn.Module`](https://pytorch.org/docs/stable/nn.html#torch.nn.Module) または [TensorFlow `tf.keras.Model`](https://www.tensorflow.org/api_docs/python/tf/keras/Model) (バックエンドによって異なる)で、通常通り使用することが可能です。[このチュートリアル](https://huggingface.co/docs/transformers/training)では、このようなモデルを従来のPyTorchやTensorFlowの学習ループに統合する方法や、私たちの`Trainer`APIを使って新しいデータセットで素早く微調整を行う方法について説明します。
+モデル自体は通常の[Pytorch `nn.Module`](https://pytorch.org/docs/stable/nn.html#torch.nn.Module) または [TensorFlow `tf.keras.Model`](https://www.tensorflow.org/api_docs/python/tf/keras/Model) (バックエンドによって異なる)で、通常通り使用することが可能です。[このチュートリアル](https://huggingface.co/docs/transformers/training)では、このようなモデルを従来の PyTorch や TensorFlow の学習ループに統合する方法や、私たちの`Trainer`API を使って新しいデータセットで素早く微調整を行う方法について説明します。
 
-## なぜtransformersを使う必要があるのでしょうか？
+## なぜ transformers を使う必要があるのでしょうか？
 
 1. 使いやすい最新モデル:
-    - 自然言語理解・生成、コンピュータビジョン、オーディオの各タスクで高いパフォーマンスを発揮します。
-    - 教育者、実務者にとっての低い参入障壁。
-    - 学習するクラスは3つだけで、ユーザが直面する抽象化はほとんどありません。
-    - 学習済みモデルを利用するための統一されたAPI。
+
+   - 自然言語理解・生成、コンピュータビジョン、オーディオの各タスクで高いパフォーマンスを発揮します。
+   - 教育者、実務者にとっての低い参入障壁。
+   - 学習するクラスは 3 つだけで、ユーザが直面する抽象化はほとんどありません。
+   - 学習済みモデルを利用するための統一された API。
 
 1. 低い計算コスト、少ないカーボンフットプリント:
-    - 研究者は、常に再トレーニングを行うのではなく、トレーニングされたモデルを共有することができます。
-    - 実務家は、計算時間や生産コストを削減することができます。
-    - すべてのモダリティにおいて、60,000以上の事前学習済みモデルを持つ数多くのアーキテクチャを提供します。
+
+   - 研究者は、常に再トレーニングを行うのではなく、トレーニングされたモデルを共有することができます。
+   - 実務家は、計算時間や生産コストを削減することができます。
+   - すべてのモダリティにおいて、60,000 以上の事前学習済みモデルを持つ数多くのアーキテクチャを提供します。
 
 1. モデルのライフタイムのあらゆる部分で適切なフレームワークを選択可能:
-    - 3行のコードで最先端のモデルをトレーニング。
-    - TF2.0/PyTorch/JAXフレームワーク間で1つのモデルを自在に移動させる。
-    - 学習、評価、生産に適したフレームワークをシームレスに選択できます。
+
+   - 3 行のコードで最先端のモデルをトレーニング。
+   - TF2.0/PyTorch/JAX フレームワーク間で 1 つのモデルを自在に移動させる。
+   - 学習、評価、生産に適したフレームワークをシームレスに選択できます。
 
 1. モデルやサンプルをニーズに合わせて簡単にカスタマイズ可能:
-    - 原著者が発表した結果を再現するために、各アーキテクチャの例を提供しています。
-    - モデル内部は可能な限り一貫して公開されています。
-    - モデルファイルはライブラリとは独立して利用することができ、迅速な実験が可能です。
+   - 原著者が発表した結果を再現するために、各アーキテクチャの例を提供しています。
+   - モデル内部は可能な限り一貫して公開されています。
+   - モデルファイルはライブラリとは独立して利用することができ、迅速な実験が可能です。
 
-## なぜtransformersを使ってはいけないのでしょうか？
+## なぜ transformers を使ってはいけないのでしょうか？
 
 - このライブラリは、ニューラルネットのためのビルディングブロックのモジュール式ツールボックスではありません。モデルファイルのコードは、研究者が追加の抽象化/ファイルに飛び込むことなく、各モデルを素早く反復できるように、意図的に追加の抽象化でリファクタリングされていません。
-- 学習APIはどのようなモデルでも動作するわけではなく、ライブラリが提供するモデルで動作するように最適化されています。一般的な機械学習のループには、別のライブラリ(おそらく[Accelerate](https://huggingface.co/docs/accelerate))を使用する必要があります。
+- 学習 API はどのようなモデルでも動作するわけではなく、ライブラリが提供するモデルで動作するように最適化されています。一般的な機械学習のループには、別のライブラリ(おそらく[Accelerate](https://huggingface.co/docs/accelerate))を使用する必要があります。
 - 私たちはできるだけ多くの使用例を紹介するよう努力していますが、[examples フォルダ](https://github.com/huggingface/transformers/tree/main/examples) にあるスクリプトはあくまで例です。あなたの特定の問題に対してすぐに動作するわけではなく、あなたのニーズに合わせるために数行のコードを変更する必要があることが予想されます。
 
 ## インストール
 
-### pipにて
+### pip にて
 
 このリポジトリは、Python 3.6+, Flax 0.3.2+, PyTorch 1.3.1+, TensorFlow 2.3+ でテストされています。
 
-🤗Transformersは[仮想環境](https://docs.python.org/3/library/venv.html)にインストールする必要があります。Pythonの仮想環境に慣れていない場合は、[ユーザーガイド](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)を確認してください。
+🤗Transformers は[仮想環境](https://docs.python.org/3/library/venv.html)にインストールする必要があります。Python の仮想環境に慣れていない場合は、[ユーザーガイド](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)を確認してください。
 
-まず、使用するバージョンのPythonで仮想環境を作成し、アクティベートします。
+まず、使用するバージョンの Python で仮想環境を作成し、アクティベートします。
 
-その後、Flax, PyTorch, TensorFlowのうち少なくとも1つをインストールする必要があります。
-[TensorFlowインストールページ](https://www.tensorflow.org/install/)、[PyTorchインストールページ](https://pytorch.org/get-started/locally/#start-locally)、[Flax](https://github.com/google/flax#quick-install)、[Jax](https://github.com/google/jax#installation)インストールページで、お使いのプラットフォーム別のインストールコマンドを参照してください。
+その後、Flax, PyTorch, TensorFlow のうち少なくとも 1 つをインストールする必要があります。
+[TensorFlow インストールページ](https://www.tensorflow.org/install/)、[PyTorch インストールページ](https://pytorch.org/get-started/locally/#start-locally)、[Flax](https://github.com/google/flax#quick-install)、[Jax](https://github.com/google/jax#installation)インストールページで、お使いのプラットフォーム別のインストールコマンドを参照してください。
 
-これらのバックエンドのいずれかがインストールされている場合、🤗Transformersは以下のようにpipを使用してインストールすることができます:
+これらのバックエンドのいずれかがインストールされている場合、🤗Transformers は以下のように pip を使用してインストールすることができます:
 
 ```bash
 pip install transformers
@@ -274,27 +283,27 @@ pip install transformers
 
 もしサンプルを試したい、またはコードの最先端が必要で、新しいリリースを待てない場合は、[ライブラリをソースからインストール](https://huggingface.co/docs/transformers/installation#installing-from-source)する必要があります。
 
-### condaにて
+### conda にて
 
-Transformersバージョン4.0.0から、condaチャンネルを搭載しました: `huggingface`。
+Transformers バージョン 4.0.0 から、conda チャンネルを搭載しました: `huggingface`。
 
-🤗Transformersは以下のようにcondaを使って設置することができます:
+🤗Transformers は以下のように conda を使って設置することができます:
 
 ```shell script
 conda install -c huggingface transformers
 ```
 
-Flax、PyTorch、TensorFlowをcondaでインストールする方法は、それぞれのインストールページに従ってください。
+Flax、PyTorch、TensorFlow を conda でインストールする方法は、それぞれのインストールページに従ってください。
 
-> **_注意:_**  Windowsでは、キャッシュの恩恵を受けるために、デベロッパーモードを有効にするよう促されることがあります。このような場合は、[このissue](https://github.com/huggingface/huggingface_hub/issues/1062)でお知らせください。
+> **_注意:_** Windows では、キャッシュの恩恵を受けるために、デベロッパーモードを有効にするよう促されることがあります。このような場合は、[この issue](https://github.com/huggingface/huggingface_hub/issues/1062)でお知らせください。
 
 ## モデルアーキテクチャ
 
-🤗Transformersが提供する **[全モデルチェックポイント](https://huggingface.co/models)** は、[ユーザー](https://huggingface.co/users)や[組織](https://huggingface.co/organizations)によって直接アップロードされるhuggingface.co [model hub](https://huggingface.co)からシームレスに統合されています。
+🤗Transformers が提供する **[全モデルチェックポイント](https://huggingface.co/models)** は、[ユーザー](https://huggingface.co/users)や[組織](https://huggingface.co/organizations)によって直接アップロードされる huggingface.co [model hub](https://huggingface.co)からシームレスに統合されています。
 
 現在のチェックポイント数: ![](https://img.shields.io/endpoint?url=https://huggingface.co/api/shields/models&color=brightgreen)
 
-🤗Transformersは現在、以下のアーキテクチャを提供しています（それぞれのハイレベルな要約は[こちら](https://huggingface.co/docs/transformers/model_summary)を参照してください）:
+🤗Transformers は現在、以下のアーキテクチャを提供しています（それぞれのハイレベルな要約は[こちら](https://huggingface.co/docs/transformers/model_summary)を参照してください）:
 
 1. **[ALBERT](https://huggingface.co/docs/transformers/model_doc/albert)** (from Google Research and the Toyota Technological Institute at Chicago) released with the paper [ALBERT: A Lite BERT for Self-supervised Learning of Language Representations](https://arxiv.org/abs/1909.11942), by Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, Radu Soricut.
 1. **[BART](https://huggingface.co/docs/transformers/model_doc/bart)** (from Facebook) released with the paper [BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension](https://arxiv.org/abs/1910.13461) by Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdelrahman Mohamed, Omer Levy, Ves Stoyanov and Luke Zettlemoyer.
@@ -308,10 +317,10 @@ Flax、PyTorch、TensorFlowをcondaでインストールする方法は、それ
 1. **[BigBird-RoBERTa](https://huggingface.co/docs/transformers/model_doc/big_bird)** (from Google Research) released with the paper [Big Bird: Transformers for Longer Sequences](https://arxiv.org/abs/2007.14062) by Manzil Zaheer, Guru Guruganesh, Avinava Dubey, Joshua Ainslie, Chris Alberti, Santiago Ontanon, Philip Pham, Anirudh Ravula, Qifan Wang, Li Yang, Amr Ahmed.
 1. **[Blenderbot](https://huggingface.co/docs/transformers/model_doc/blenderbot)** (from Facebook) released with the paper [Recipes for building an open-domain chatbot](https://arxiv.org/abs/2004.13637) by Stephen Roller, Emily Dinan, Naman Goyal, Da Ju, Mary Williamson, Yinhan Liu, Jing Xu, Myle Ott, Kurt Shuster, Eric M. Smith, Y-Lan Boureau, Jason Weston.
 1. **[BlenderbotSmall](https://huggingface.co/docs/transformers/model_doc/blenderbot-small)** (from Facebook) released with the paper [Recipes for building an open-domain chatbot](https://arxiv.org/abs/2004.13637) by Stephen Roller, Emily Dinan, Naman Goyal, Da Ju, Mary Williamson, Yinhan Liu, Jing Xu, Myle Ott, Kurt Shuster, Eric M. Smith, Y-Lan Boureau, Jason Weston.
-1. **[BLOOM](https://huggingface.co/docs/transformers/model_doc/bloom)** (from BigScience workshop) released by the [BigSicence Workshop](https://bigscience.huggingface.co/).
+1. **[BLOOM](https://huggingface.co/docs/transformers/model_doc/bloom)** (from BigScience workshop) released by the [BigScience Workshop](https://bigscience.huggingface.co/).
 1. **[BORT](https://huggingface.co/docs/transformers/model_doc/bort)** (from Alexa) released with the paper [Optimal Subarchitecture Extraction For BERT](https://arxiv.org/abs/2010.10499) by Adrian de Wynter and Daniel J. Perry.
 1. **[ByT5](https://huggingface.co/docs/transformers/model_doc/byt5)** (from Google Research) released with the paper [ByT5: Towards a token-free future with pre-trained byte-to-byte models](https://arxiv.org/abs/2105.13626) by Linting Xue, Aditya Barua, Noah Constant, Rami Al-Rfou, Sharan Narang, Mihir Kale, Adam Roberts, Colin Raffel.
-1. **[CamemBERT](https://huggingface.co/docs/transformers/model_doc/camembert)** (from Inria/Facebook/Sorbonne) released with the paper [CamemBERT: a Tasty French Language Model](https://arxiv.org/abs/1911.03894) by Louis Martin*, Benjamin Muller*, Pedro Javier Ortiz Suárez*, Yoann Dupont, Laurent Romary, Éric Villemonte de la Clergerie, Djamé Seddah and Benoît Sagot.
+1. **[CamemBERT](https://huggingface.co/docs/transformers/model_doc/camembert)** (from Inria/Facebook/Sorbonne) released with the paper [CamemBERT: a Tasty French Language Model](https://arxiv.org/abs/1911.03894) by Louis Martin*, Benjamin Muller*, Pedro Javier Ortiz Suárez\*, Yoann Dupont, Laurent Romary, Éric Villemonte de la Clergerie, Djamé Seddah and Benoît Sagot.
 1. **[CANINE](https://huggingface.co/docs/transformers/model_doc/canine)** (from Google Research) released with the paper [CANINE: Pre-training an Efficient Tokenization-Free Encoder for Language Representation](https://arxiv.org/abs/2103.06874) by Jonathan H. Clark, Dan Garrette, Iulia Turc, John Wieting.
 1. **[CLIP](https://huggingface.co/docs/transformers/model_doc/clip)** (from OpenAI) released with the paper [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020) by Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever.
 1. **[CLIPSeg](https://huggingface.co/docs/transformers/main/model_doc/clipseg)** (from University of Göttingen) released with the paper [Image Segmentation Using Text and Image Prompts](https://arxiv.org/abs/2112.10003) by Timo Lüddecke and Alexander Ecker.
@@ -322,7 +331,7 @@ Flax、PyTorch、TensorFlowをcondaでインストールする方法は、それ
 1. **[CPM](https://huggingface.co/docs/transformers/model_doc/cpm)** (from Tsinghua University) released with the paper [CPM: A Large-scale Generative Chinese Pre-trained Language Model](https://arxiv.org/abs/2012.00413) by Zhengyan Zhang, Xu Han, Hao Zhou, Pei Ke, Yuxian Gu, Deming Ye, Yujia Qin, Yusheng Su, Haozhe Ji, Jian Guan, Fanchao Qi, Xiaozhi Wang, Yanan Zheng, Guoyang Zeng, Huanqi Cao, Shengqi Chen, Daixuan Li, Zhenbo Sun, Zhiyuan Liu, Minlie Huang, Wentao Han, Jie Tang, Juanzi Li, Xiaoyan Zhu, Maosong Sun.
 1. **[CTRL](https://huggingface.co/docs/transformers/model_doc/ctrl)** (from Salesforce) released with the paper [CTRL: A Conditional Transformer Language Model for Controllable Generation](https://arxiv.org/abs/1909.05858) by Nitish Shirish Keskar*, Bryan McCann*, Lav R. Varshney, Caiming Xiong and Richard Socher.
 1. **[CvT](https://huggingface.co/docs/transformers/model_doc/cvt)** (from Microsoft) released with the paper [CvT: Introducing Convolutions to Vision Transformers](https://arxiv.org/abs/2103.15808) by Haiping Wu, Bin Xiao, Noel Codella, Mengchen Liu, Xiyang Dai, Lu Yuan, Lei Zhang.
-1. **[Data2Vec](https://huggingface.co/docs/transformers/model_doc/data2vec)** (from Facebook) released with the paper [Data2Vec:  A General Framework for Self-supervised Learning in Speech, Vision and Language](https://arxiv.org/abs/2202.03555) by Alexei Baevski, Wei-Ning Hsu, Qiantong Xu, Arun Babu, Jiatao Gu, Michael Auli.
+1. **[Data2Vec](https://huggingface.co/docs/transformers/model_doc/data2vec)** (from Facebook) released with the paper [Data2Vec: A General Framework for Self-supervised Learning in Speech, Vision and Language](https://arxiv.org/abs/2202.03555) by Alexei Baevski, Wei-Ning Hsu, Qiantong Xu, Arun Babu, Jiatao Gu, Michael Auli.
 1. **[DeBERTa](https://huggingface.co/docs/transformers/model_doc/deberta)** (from Microsoft) released with the paper [DeBERTa: Decoding-enhanced BERT with Disentangled Attention](https://arxiv.org/abs/2006.03654) by Pengcheng He, Xiaodong Liu, Jianfeng Gao, Weizhu Chen.
 1. **[DeBERTa-v2](https://huggingface.co/docs/transformers/model_doc/deberta-v2)** (from Microsoft) released with the paper [DeBERTa: Decoding-enhanced BERT with Disentangled Attention](https://arxiv.org/abs/2006.03654) by Pengcheng He, Xiaodong Liu, Jianfeng Gao, Weizhu Chen.
 1. **[Decision Transformer](https://huggingface.co/docs/transformers/model_doc/decision_transformer)** (from Berkeley/Facebook/Google) released with the paper [Decision Transformer: Reinforcement Learning via Sequence Modeling](https://arxiv.org/abs/2106.01345) by Lili Chen, Kevin Lu, Aravind Rajeswaran, Kimin Lee, Aditya Grover, Michael Laskin, Pieter Abbeel, Aravind Srinivas, Igor Mordatch.
@@ -339,7 +348,7 @@ Flax、PyTorch、TensorFlowをcondaでインストールする方法は、それ
 1. **[ELECTRA](https://huggingface.co/docs/transformers/model_doc/electra)** (from Google Research/Stanford University) released with the paper [ELECTRA: Pre-training text encoders as discriminators rather than generators](https://arxiv.org/abs/2003.10555) by Kevin Clark, Minh-Thang Luong, Quoc V. Le, Christopher D. Manning.
 1. **[EncoderDecoder](https://huggingface.co/docs/transformers/model_doc/encoder-decoder)** (from Google Research) released with the paper [Leveraging Pre-trained Checkpoints for Sequence Generation Tasks](https://arxiv.org/abs/1907.12461) by Sascha Rothe, Shashi Narayan, Aliaksei Severyn.
 1. **[ERNIE](https://huggingface.co/docs/transformers/model_doc/ernie)** (from Baidu) released with the paper [ERNIE: Enhanced Representation through Knowledge Integration](https://arxiv.org/abs/1904.09223) by Yu Sun, Shuohuan Wang, Yukun Li, Shikun Feng, Xuyi Chen, Han Zhang, Xin Tian, Danxiang Zhu, Hao Tian, Hua Wu.
-1. **[ESM](https://huggingface.co/docs/transformers/model_doc/esm)** (from Meta AI) are transformer protein language models.  **ESM-1b** was released with the paper [Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences](https://www.pnas.org/content/118/15/e2016239118) by Alexander Rives, Joshua Meier, Tom Sercu, Siddharth Goyal, Zeming Lin, Jason Liu, Demi Guo, Myle Ott, C. Lawrence Zitnick, Jerry Ma, and Rob Fergus. **ESM-1v** was released with the paper [Language models enable zero-shot prediction of the effects of mutations on protein function](https://doi.org/10.1101/2021.07.09.450648) by Joshua Meier, Roshan Rao, Robert Verkuil, Jason Liu, Tom Sercu and Alexander Rives. **ESM-2** was released with the paper [Language models of protein sequences at the scale of evolution enable accurate structure prediction](https://doi.org/10.1101/2022.07.20.500902) by Zeming Lin, Halil Akin, Roshan Rao, Brian Hie, Zhongkai Zhu, Wenting Lu, Allan dos Santos Costa, Maryam Fazel-Zarandi, Tom Sercu, Sal Candido, Alexander Rives.
+1. **[ESM](https://huggingface.co/docs/transformers/model_doc/esm)** (from Meta AI) are transformer protein language models. **ESM-1b** was released with the paper [Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences](https://www.pnas.org/content/118/15/e2016239118) by Alexander Rives, Joshua Meier, Tom Sercu, Siddharth Goyal, Zeming Lin, Jason Liu, Demi Guo, Myle Ott, C. Lawrence Zitnick, Jerry Ma, and Rob Fergus. **ESM-1v** was released with the paper [Language models enable zero-shot prediction of the effects of mutations on protein function](https://doi.org/10.1101/2021.07.09.450648) by Joshua Meier, Roshan Rao, Robert Verkuil, Jason Liu, Tom Sercu and Alexander Rives. **ESM-2** was released with the paper [Language models of protein sequences at the scale of evolution enable accurate structure prediction](https://doi.org/10.1101/2022.07.20.500902) by Zeming Lin, Halil Akin, Roshan Rao, Brian Hie, Zhongkai Zhu, Wenting Lu, Allan dos Santos Costa, Maryam Fazel-Zarandi, Tom Sercu, Sal Candido, Alexander Rives.
 1. **[FLAN-T5](https://huggingface.co/docs/transformers/model_doc/flan-t5)** (from Google AI) released in the repository [google-research/t5x](https://github.com/google-research/t5x/blob/main/docs/models.md#flan-t5-checkpoints) by Hyung Won Chung, Le Hou, Shayne Longpre, Barret Zoph, Yi Tay, William Fedus, Eric Li, Xuezhi Wang, Mostafa Dehghani, Siddhartha Brahma, Albert Webson, Shixiang Shane Gu, Zhuyun Dai, Mirac Suzgun, Xinyun Chen, Aakanksha Chowdhery, Sharan Narang, Gaurav Mishra, Adams Yu, Vincent Zhao, Yanping Huang, Andrew Dai, Hongkun Yu, Slav Petrov, Ed H. Chi, Jeff Dean, Jacob Devlin, Adam Roberts, Denny Zhou, Quoc V. Le, and Jason Wei
 1. **[FlauBERT](https://huggingface.co/docs/transformers/model_doc/flaubert)** (from CNRS) released with the paper [FlauBERT: Unsupervised Language Model Pre-training for French](https://arxiv.org/abs/1912.05372) by Hang Le, Loïc Vial, Jibril Frej, Vincent Segonne, Maximin Coavoux, Benjamin Lecouteux, Alexandre Allauzen, Benoît Crabbé, Laurent Besacier, Didier Schwab.
 1. **[FLAVA](https://huggingface.co/docs/transformers/model_doc/flava)** (from Facebook AI) released with the paper [FLAVA: A Foundational Language And Vision Alignment Model](https://arxiv.org/abs/2112.04482) by Amanpreet Singh, Ronghang Hu, Vedanuj Goswami, Guillaume Couairon, Wojciech Galuba, Marcus Rohrbach, and Douwe Kiela.
@@ -422,7 +431,7 @@ Flax、PyTorch、TensorFlowをcondaでインストールする方法は、それ
 1. **[Table Transformer](https://huggingface.co/docs/transformers/model_doc/table-transformer)** (from Microsoft Research) released with the paper [PubTables-1M: Towards Comprehensive Table Extraction From Unstructured Documents](https://arxiv.org/abs/2110.00061) by Brandon Smock, Rohith Pesala, Robin Abraham.
 1. **[TAPAS](https://huggingface.co/docs/transformers/model_doc/tapas)** (from Google AI) released with the paper [TAPAS: Weakly Supervised Table Parsing via Pre-training](https://arxiv.org/abs/2004.02349) by Jonathan Herzig, Paweł Krzysztof Nowak, Thomas Müller, Francesco Piccinno and Julian Martin Eisenschlos.
 1. **[TAPEX](https://huggingface.co/docs/transformers/model_doc/tapex)** (from Microsoft Research) released with the paper [TAPEX: Table Pre-training via Learning a Neural SQL Executor](https://arxiv.org/abs/2107.07653) by Qian Liu, Bei Chen, Jiaqi Guo, Morteza Ziyadi, Zeqi Lin, Weizhu Chen, Jian-Guang Lou.
-1. **[Time Series Transformer](https://huggingface.co/docs/transformers/model_doc/time_series_transformer)**  (from HuggingFace).
+1. **[Time Series Transformer](https://huggingface.co/docs/transformers/model_doc/time_series_transformer)** (from HuggingFace).
 1. **[Trajectory Transformer](https://huggingface.co/docs/transformers/model_doc/trajectory_transformers)** (from the University of California at Berkeley) released with the paper [Offline Reinforcement Learning as One Big Sequence Modeling Problem](https://arxiv.org/abs/2106.02039) by Michael Janner, Qiyang Li, Sergey Levine
 1. **[Transformer-XL](https://huggingface.co/docs/transformers/model_doc/transfo-xl)** (from Google/CMU) released with the paper [Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context](https://arxiv.org/abs/1901.02860) by Zihang Dai*, Zhilin Yang*, Yiming Yang, Jaime Carbonell, Quoc V. Le, Ruslan Salakhutdinov.
 1. **[TrOCR](https://huggingface.co/docs/transformers/model_doc/trocr)** (from Microsoft), released together with the paper [TrOCR: Transformer-based Optical Character Recognition with Pre-trained Models](https://arxiv.org/abs/2109.10282) by Minghao Li, Tengchao Lv, Lei Cui, Yijuan Lu, Dinei Florencio, Cha Zhang, Zhoujun Li, Furu Wei.
@@ -452,28 +461,28 @@ Flax、PyTorch、TensorFlowをcondaでインストールする方法は、それ
 1. **[XLSR-Wav2Vec2](https://huggingface.co/docs/transformers/model_doc/xlsr_wav2vec2)** (from Facebook AI) released with the paper [Unsupervised Cross-Lingual Representation Learning For Speech Recognition](https://arxiv.org/abs/2006.13979) by Alexis Conneau, Alexei Baevski, Ronan Collobert, Abdelrahman Mohamed, Michael Auli.
 1. **[YOLOS](https://huggingface.co/docs/transformers/model_doc/yolos)** (from Huazhong University of Science & Technology) released with the paper [You Only Look at One Sequence: Rethinking Transformer in Vision through Object Detection](https://arxiv.org/abs/2106.00666) by Yuxin Fang, Bencheng Liao, Xinggang Wang, Jiemin Fang, Jiyang Qi, Rui Wu, Jianwei Niu, Wenyu Liu.
 1. **[YOSO](https://huggingface.co/docs/transformers/model_doc/yoso)** (from the University of Wisconsin - Madison) released with the paper [You Only Sample (Almost) Once: Linear Cost Self-Attention Via Bernoulli Sampling](https://arxiv.org/abs/2111.09714) by Zhanpeng Zeng, Yunyang Xiong, Sathya N. Ravi, Shailesh Acharya, Glenn Fung, Vikas Singh.
-1. 新しいモデルを投稿したいですか？新しいモデルを追加するためのガイドとして、**詳細なガイドとテンプレート**が追加されました。これらはリポジトリの[`templates`](./templates)フォルダにあります。PRを始める前に、必ず[コントリビューションガイド](./CONTRIBUTING.md)を確認し、メンテナに連絡するか、フィードバックを収集するためにissueを開いてください。
+1. 新しいモデルを投稿したいですか？新しいモデルを追加するためのガイドとして、**詳細なガイドとテンプレート**が追加されました。これらはリポジトリの[`templates`](./templates)フォルダにあります。PR を始める前に、必ず[コントリビューションガイド](./CONTRIBUTING.md)を確認し、メンテナに連絡するか、フィードバックを収集するために issue を開いてください。
 
-各モデルがFlax、PyTorch、TensorFlowで実装されているか、🤗Tokenizersライブラリに支えられた関連トークナイザを持っているかは、[この表](https://huggingface.co/docs/transformers/index#supported-frameworks)を参照してください。
+各モデルが Flax、PyTorch、TensorFlow で実装されているか、🤗Tokenizers ライブラリに支えられた関連トークナイザを持っているかは、[この表](https://huggingface.co/docs/transformers/index#supported-frameworks)を参照してください。
 
-これらの実装はいくつかのデータセットでテストされており(サンプルスクリプトを参照)、オリジナルの実装の性能と一致するはずである。性能の詳細は[documentation](https://github.com/huggingface/transformers/tree/main/examples)のExamplesセクションで見ることができます。
-
+これらの実装はいくつかのデータセットでテストされており(サンプルスクリプトを参照)、オリジナルの実装の性能と一致するはずである。性能の詳細は[documentation](https://github.com/huggingface/transformers/tree/main/examples)の Examples セクションで見ることができます。
 
 ## さらに詳しく
 
-| セクション | 概要 |
-|-|-|
-| [ドキュメント](https://huggingface.co/docs/transformers/) | 完全なAPIドキュメントとチュートリアル |
-| [タスク概要](https://huggingface.co/docs/transformers/task_summary) | 🤗Transformersがサポートするタスク |
-| [前処理チュートリアル](https://huggingface.co/docs/transformers/preprocessing) | モデル用のデータを準備するために`Tokenizer`クラスを使用 |
-| [トレーニングと微調整](https://huggingface.co/docs/transformers/training) | PyTorch/TensorFlowの学習ループと`Trainer`APIで🤗Transformersが提供するモデルを使用 |
-| [クイックツアー: 微調整/使用方法スクリプト](https://github.com/huggingface/transformers/tree/main/examples) | 様々なタスクでモデルの微調整を行うためのスクリプト例 |
-| [モデルの共有とアップロード](https://huggingface.co/docs/transformers/model_sharing) | 微調整したモデルをアップロードしてコミュニティで共有する |
-| [マイグレーション](https://huggingface.co/docs/transformers/migration) | `pytorch-transformers`または`pytorch-pretrained-bert`から🤗Transformers に移行する |
+| セクション                                                                                                  | 概要                                                                                   |
+| ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [ドキュメント](https://huggingface.co/docs/transformers/)                                                   | 完全な API ドキュメントとチュートリアル                                                |
+| [タスク概要](https://huggingface.co/docs/transformers/task_summary)                                         | 🤗Transformers がサポートするタスク                                                    |
+| [前処理チュートリアル](https://huggingface.co/docs/transformers/preprocessing)                              | モデル用のデータを準備するために`Tokenizer`クラスを使用                                |
+| [トレーニングと微調整](https://huggingface.co/docs/transformers/training)                                   | PyTorch/TensorFlow の学習ループと`Trainer`API で 🤗Transformers が提供するモデルを使用 |
+| [クイックツアー: 微調整/使用方法スクリプト](https://github.com/huggingface/transformers/tree/main/examples) | 様々なタスクでモデルの微調整を行うためのスクリプト例                                   |
+| [モデルの共有とアップロード](https://huggingface.co/docs/transformers/model_sharing)                        | 微調整したモデルをアップロードしてコミュニティで共有する                               |
+| [マイグレーション](https://huggingface.co/docs/transformers/migration)                                      | `pytorch-transformers`または`pytorch-pretrained-bert`から 🤗Transformers に移行する    |
 
 ## 引用
 
 🤗 トランスフォーマーライブラリに引用できる[論文](https://www.aclweb.org/anthology/2020.emnlp-demos.6/)が出来ました:
+
 ```bibtex
 @inproceedings{wolf-etal-2020-transformers,
     title = "Transformers: State-of-the-Art Natural Language Processing",
